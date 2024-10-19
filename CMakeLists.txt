@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.16)
 set (CMAKE_CXX_STANDARD 17)
 project("EngineRT")
 
-find_package(glfw3 REQUIRED)
-find_package(assimp REQUIRED)
+find_package(glm CONFIG REQUIRED)
+find_package(assimp CONFIG REQUIRED)
 
 include_directories("./include")
 
@@ -11,7 +11,7 @@ file(GLOB_RECURSE SRC_FILES "src/*.cpp" "src/*.c")
 
 add_executable(engineRT ${SRC_FILES})
 
-target_link_libraries(engineRT assimp::assimp glfw)
+target_link_libraries(engineRT assimp::assimp glm::glm -lglfw3)
 
 file(GLOB SHADER_FILES "${CMAKE_SOURCE_DIR}/shaders/*")
 

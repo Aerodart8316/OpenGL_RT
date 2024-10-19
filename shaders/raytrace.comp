@@ -204,7 +204,7 @@ float RayBoundingBoxDst(Ray ray, int box_index)
     bool hit = tFar >= tNear && tFar > 0;
     float dst = hit ? tNear > 0 ? tNear : 0 : INFINITY;
     return dst;
-};
+}
 
 bool hit_bounding_box(Ray ray, int box_index) // https://medium.com/@bromanz/another-view-on-the-classic-ray-aabb-intersection-algorithm-for-bvh-traversal-41125138b525
 {
